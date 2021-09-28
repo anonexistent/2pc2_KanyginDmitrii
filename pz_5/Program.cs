@@ -7,17 +7,23 @@ namespace pz_5
         static void Main(string[] args)
         {
             // задание 1!!!
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("exercise 1");
             Console.WriteLine();
+            Console.ResetColor();
             for (var i =-100; i<50; i+=5)
             {
                 Console.WriteLine(i + 5);
             }
 
-            //задание 2
+            // задание 2
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine("exercise 2");
             Console.WriteLine();
+            Console.ResetColor();
             char s111 = 'M';
             for (var i =0; i<5; i++)
             {
@@ -25,10 +31,13 @@ namespace pz_5
                 s111++;
             }
 
-            //задание 3
+            // задание 3
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine("exercise 3");
             Console.WriteLine();
+            Console.ResetColor();
             var j1 = '#';
             for (int i = 0; i != 4; i++) 
             {
@@ -39,10 +48,13 @@ namespace pz_5
                 Console.WriteLine();
             }
 
-            //exercise 4
+            // задание 4
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine("exercise 4");
             Console.WriteLine();
+            Console.ResetColor();
             for (int i = 1; i!=100; i++)
             {
                 var cc = i % 7;
@@ -52,12 +64,15 @@ namespace pz_5
                 }
             }
 
-            //exercise 5
+            // задание 5
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine("exercise 5");
             Console.WriteLine();
+            Console.ResetColor();
             int j = 40;
-            for(int i=1; ; i++)
+            for(int i=1;i<j+10; i++)
             {
                 Console.WriteLine(i + " " + j);
                 j--;
