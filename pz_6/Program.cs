@@ -6,18 +6,18 @@ namespace pz_6
     {
         static void Main(string[] args)
         {
-            ulong n, n1 = 0;
-            n1 = n = ulong.Parse(Console.ReadLine());
+            long n, n1 = 0;
+            n1 = n = long.Parse(Console.ReadLine());
             int y;
-            y = 
-            if (n % 2 == 1)
-            {
-                y = 1;
-            }
-            else
-            {
-                y = 2;
-            }
+            y = (n %2== 1) ? 1 : 2;
+            //if (n % 2 == 1)
+            //{
+            //    y = 1;
+            //}
+            //else
+            //{
+            //    y = 2;
+            //}
             while (n != y)
             {
                 n -= 2;
