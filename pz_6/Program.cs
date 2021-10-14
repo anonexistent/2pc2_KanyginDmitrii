@@ -16,6 +16,7 @@ namespace pz_6
                 n1 *= n;
             }
             Console.WriteLine(n1);
+            Console.ReadLine();
         }
     }
 }
