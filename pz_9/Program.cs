@@ -16,8 +16,7 @@ namespace pz_9
             //пробегаемся  по массиву ar: выводим его, добавляем элементы в доп массив,
             //чтоб потом сложить(y) и находи минимальный элемент массива(z)
                 for (int i=0; i != 8; i++) 
-                {        
-                
+                {                        
                 for(int j=0; j!=6;j++)
                 {
                     ar[i, j] = (sbyte)uuu.Next(sbyte.MinValue, sbyte.MaxValue);
