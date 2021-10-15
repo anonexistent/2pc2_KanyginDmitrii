@@ -17,19 +17,19 @@ namespace pz_9
             //чтоб потом сложить(y) и находи минимальный элемент массива(z)
                 for (int i=0; i != 8; i++) 
                 {                        
-                for(int j=0; j!=6;j++)
-                {
-                    ar[i, j] = (sbyte)uuu.Next(sbyte.MinValue, sbyte.MaxValue);
-                    Console.Write($"{ar[i, j]} \t");
-                    if (ar[i, j] > 0)
+                    for(int j=0; j!=6;j++)
                     {
-                        ar0[x] = ar[i, j];
-                        x++;
-                    }
-                    else if (ar[i, j] < z)
-                    {
-                        z = ar[i,j];            
-                    }                  
+                        ar[i, j] = (sbyte)uuu.Next(sbyte.MinValue, sbyte.MaxValue);
+                        Console.Write($"{ar[i, j]} \t");
+                        if (ar[i, j] > 0)
+                        {
+                            ar0[x] = ar[i, j];
+                            x++;
+                        }
+                        else if (ar[i, j] < z)
+                        {
+                            z = ar[i,j];            
+                        }                  
                 }
                 Console.WriteLine();
                 }
