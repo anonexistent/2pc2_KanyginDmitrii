@@ -80,6 +80,8 @@ namespace pz_10
                     Console.Write($"{myArray[i][j]} ");
                 str($"\n\t\t\t—\n");
             }
+
+
         }
     }
 }
