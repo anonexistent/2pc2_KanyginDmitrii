@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace pz_10
 {
@@ -17,12 +18,14 @@ namespace pz_10
             Random uuu = new Random();
             char[][] myArray = new char[10][];
             char[] myArray0 = new char[10];
+            int a = 0;
+            char b = ' ';
             for (int i = 0; i < myArray.Length; i++)
             {
                 myArray[i] = new char[uuu.Next(3,50)];
                 for (int j = 0; j < myArray[i].Length; j++)
                 {
-                    myArray[i][j] = (char)uuu.Next(128);
+                    myArray[i][j]= (char)uuu.Next(128);
                 }
             }
             for (int i = 0; i < myArray.Length; i++)
@@ -33,15 +36,54 @@ namespace pz_10
                 }
                 str($"\n—\n");
             }
+            //ищем последние элементы
             for (int i = 0; i !=10 ; i++)
                 myArray0[i] = myArray[i][^1];
-            str("last symbols: ");
+            str("last: ");
             for (int i = 0; i !=10 ; i++)
                 Console.Write($"{myArray0[i]} ");
-            str("");
+            str("\n");
 
+            //ищем максимальные элементы
+            for (int i = 0; i !=10; i++)
+                myArray0[i] = myArray[i].Max();
+            str("max: ");
+            for (int i = 0; i != 10; i++)
+            {
+                Console.Write($"{myArray0[i]} ");
+            }
+            str("\n");
 
-
+            //меняем местами элементы
+            //////////////////////////////for (int i = 0; i != 10; i++)
+            //////////////////////////////{
+            //////////////////////////////    Console.WriteLine(myArray[i][0]);
+            //////////////////////////////    qq = Array.IndexOf(myArray, myArray[i].Max());
+            //////////////////////////////    myArray[i][0] = myArray[i].Max();
+            //////////////////////////////    Console.WriteLine("\t*"+myArray[i][0]);
+            //////////////////////////////}
+            ///
+            
+            for(int i=0; i!=10 ;i++ )
+            {
+                for (int j = 0; j < myArray[i].Length; j++)
+                {
+                    if (myArray[i][j] == myArray[i].Max())
+                    {
+                        a = Array.IndexOf(myArray[i], myArray[i][j]);
+                        b = myArray[i][0];
+                        myArray[i][0] = myArray[i].Max();
+                        myArray[i][a] = b;
+                    }
+                }
+            }
+            str("new: ");
+            for (int i = 0; i != 10; i++)
+            {
+                for (int j = 0; j < myArray[i].Length; j++)
+                    Console.Write($"{myArray[i][j]} ");
+                Console.WriteLine();
+            }
         }
     }
 }
