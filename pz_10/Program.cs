@@ -13,6 +13,14 @@ namespace pz_10
             Console.ResetColor();
         }
 
+        static void str1(string a)
+        {
+            Console.BackgroundColor = ConsoleColor.Magenta;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(a);
+            Console.ResetColor();
+        }
+
         static void Main(string[] args)
         {
             Random uuu = new Random();
@@ -28,18 +36,17 @@ namespace pz_10
                     myArray[i][j]= (char)uuu.Next(128);
                 }
             }
+            str1("array: ");
             for (int i = 0; i < myArray.Length; i++)
             {
                 for (int j = 0; j < myArray[i].Length; j++)
-                {
                     Console.Write($"{myArray[i][j]} ") ;
-                }
-                str($"\n—\n");
+                str($"\n\t\t\t—\n");
             }
             //ищем последние элементы
             for (int i = 0; i !=10 ; i++)
                 myArray0[i] = myArray[i][^1];
-            str("last: ");
+            str1("last: ");
             for (int i = 0; i !=10 ; i++)
                 Console.Write($"{myArray0[i]} ");
             str("\n");
@@ -47,25 +54,14 @@ namespace pz_10
             //ищем максимальные элементы
             for (int i = 0; i !=10; i++)
                 myArray0[i] = myArray[i].Max();
-            str("max: ");
+            str1("max: ");
+
             for (int i = 0; i != 10; i++)
-            {
                 Console.Write($"{myArray0[i]} ");
-            }
             str("\n");
 
-            //меняем местами элементы
-            //////////////////////////////for (int i = 0; i != 10; i++)
-            //////////////////////////////{
-            //////////////////////////////    Console.WriteLine(myArray[i][0]);
-            //////////////////////////////    qq = Array.IndexOf(myArray, myArray[i].Max());
-            //////////////////////////////    myArray[i][0] = myArray[i].Max();
-            //////////////////////////////    Console.WriteLine("\t*"+myArray[i][0]);
-            //////////////////////////////}
-            ///
-            
+            //вычисляем индекс и меняем местами
             for(int i=0; i!=10 ;i++ )
-            {
                 for (int j = 0; j < myArray[i].Length; j++)
                 {
                     if (myArray[i][j] == myArray[i].Max())
@@ -76,13 +72,13 @@ namespace pz_10
                         myArray[i][a] = b;
                     }
                 }
-            }
-            str("new: ");
+            str1("new: ");
+
             for (int i = 0; i != 10; i++)
             {
                 for (int j = 0; j < myArray[i].Length; j++)
                     Console.Write($"{myArray[i][j]} ");
-                Console.WriteLine();
+                str($"\n\t\t\t—\n");
             }
         }
     }
