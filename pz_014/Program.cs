@@ -15,6 +15,7 @@ namespace pz_014
 
         static void Main(string[] args)
         {
+            //вывод содержимого папки и выбор файла
             FileInfo[] aboutfouler = new DirectoryInfo(@"C:\fet\").GetFiles();
 
             print("pls choose .txt file pls (number):");
@@ -31,6 +32,7 @@ namespace pz_014
             if (aboutfouler[filenumber].Extension != ".txt") Console.WriteLine("mb u can to choose another file?");
             else
             {
+                //"основа" для работы с выбранным файлом
                 FileStream file1 = new FileStream(new string($"{aboutfouler[filenumber]}"), FileMode.Append);
 
                 print("what to add to file");
@@ -40,9 +42,10 @@ namespace pz_014
                 char res = ' ';
 
                 int charindex = 0;
-
+                
                 strs[0] = char.ToUpper(strs[0]);
 
+                //начало предложения с заглавной буквы (версия1.0)
                 for (int i = 0; i < strs.Length; i++)
                 {
                     if (strs[i] == '.')
