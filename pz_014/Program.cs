@@ -55,7 +55,7 @@ namespace pz_014
 
                 StreamWriter writer = new StreamWriter(file1);
 
-                writer.Write(string.Join('\0', strs));
+                writer.Write(String.Join(null, strs)+"\n");
                 writer.Close();
             }
         }
