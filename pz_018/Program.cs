@@ -28,15 +28,43 @@ namespace pz_018
             return 0;
         }
 
+        static int Ex51Sum(int a)
+        {
+            if (a == 0) return 0;
+            if (a== 1) return 1;
+            return Ex51Sum(a - 1)+a;
+        }
+
+        static int Ex52Pow(int a, int b)
+        {
+            if (b == 0) return 1;
+            if (b == 1) return a;
+            return Ex52Pow(a, b - 1) * a;
+        }
+
+        static bool Ex53Palindrom(string a)
+        {
+            if (a[0] == a[^1] & a.Length == 3 | a.Length==2) return true;
+            if (a[0] == a[^1]) return Ex53Palindrom(a.Substring(1, a.Length - 2));
+            else return false;
+            return Ex53Palindrom(a.Substring(1, a.Length -2));
+        }
+
         public static void Main()
         {
             Console.WriteLine(Ex1(3));
 
             Console.WriteLine(Ex2(3));
 
-            int q = int.Parse(Console.ReadLine());
-            int w = int.Parse(Console.ReadLine());
-            Console.WriteLine(Ex3(q, w));
+            //int q = int.Parse(Console.ReadLine());
+            //int w = int.Parse(Console.ReadLine());
+            //Console.WriteLine(Ex3(q, w));
+
+            Console.WriteLine(Ex52Pow(2,6));
+
+            Console.WriteLine(Ex51Sum(6));
+
+            Console.WriteLine(Ex53Palindrom("шалаш"));
         }
     }
 }
