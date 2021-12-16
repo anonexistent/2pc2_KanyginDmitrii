@@ -158,7 +158,7 @@ namespace pz_019_regular_expression
             Print("\n\n\n\n\n\n\n\n\n\n\n\n"+text+ "\n\n\n\n\n\n\n\n\n\n\n\n\n");
         }
 
-        static void Main(string[] args)
+        static void Main(string[] args0
         {
 
             Exercise1();
