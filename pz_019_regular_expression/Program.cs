@@ -2,6 +2,16 @@
 using System.Text.RegularExpressions;
 using System.IO;
 
+/* README
+    в данном уроке вы научимся работать с регулярными выражениями, паралельно закрепим знания по следущим темам:
+    1 строки
+    2 массивы
+    3 цыиклы
+    4 методы 
+    структура этого занятия имеет следующий вид имеется 4 упражнения рписанные в классе Exercises. 
+    решение каждого упражнение находится в отдельных методах.
+*/
+
 namespace pz_019_regular_expression
 {
     class Exercises
@@ -24,9 +34,13 @@ namespace pz_019_regular_expression
 
     class Program
     {
+        //чтобы мы могли выполнить некоторые моменты мы так сказать реализуем а точнее инициализируем сразу в классе Program 
+
         static Exercises exs = new Exercises();
 
         static Random uuu = new Random();
+
+        //самое простое в нашем сегоднешнем уроке - метод реализующий цветной текст в консоли дабы отделить особо важные символы от неособоважных
 
         static void Print(object a)
         {
@@ -36,6 +50,8 @@ namespace pz_019_regular_expression
             Console.ResetColor();
         }
 
+        //уже потруднее но все такой же легкий метод реализующий цветной текст в консоли дабы отделить особо важные символы от неособоважных
+
         static void PrintExercises(string a)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -43,6 +59,8 @@ namespace pz_019_regular_expression
             Console.WriteLine(a);
             Console.ResetColor();
         }
+
+        //и вот началось... упражнение 1 
 
         static void Exercise1()
         {
@@ -57,6 +75,8 @@ namespace pz_019_regular_expression
             Console.ReadKey();
             Console.Clear();
         }
+
+        //другое упражнение 1. 
 
         static void Exercise10()
         {
@@ -75,6 +95,9 @@ namespace pz_019_regular_expression
             Console.ReadKey();
             Console.Clear();
         }
+
+        /*упражнение 2. анализируем файл а точнее ищем классы данных, указанные в задании.
+        все так же просто и никаких сложностей не должно возникнуть. наверное*/
 
         static void Exercise2()
         {
@@ -101,6 +124,8 @@ namespace pz_019_regular_expression
             Console.Clear();
         }
 
+        /*упражнение 3. мы опять работаем с файлом но тут уже попроще*/
+
         static void Exercise3()
         {
             PrintExercises(exs.Ex3);
@@ -121,6 +146,8 @@ namespace pz_019_regular_expression
             Console.Clear();
         }
 
+        //самый главны момент нашего сегоднешнего урока только ради него было созданно данное видео. приятного просмотра
+
         static void TheEnd(string text)
         {
             int width = Console.WindowWidth;
@@ -138,7 +165,7 @@ namespace pz_019_regular_expression
             Exercise10();
             Exercise2();
             Exercise3();
-            TheEnd("TheEnd");
+            TheEnd("the end thank you for your attention. have a good day");
         }
     }
 }
