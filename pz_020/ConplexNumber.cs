@@ -1,6 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
+/*  amount - счетчик
+ *  {(qq.b>0?'+':'-')}{Math.Abs     в гетнумбер чтобы "--" и "+-" не было на вывод
+ *  переопределение тустринг обязательно
+ *  Game() не до конца реализованный функционал на будущее 
+ */
 
 namespace pz_020
 {
