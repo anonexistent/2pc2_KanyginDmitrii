@@ -1,42 +1,55 @@
 ﻿using System;
 
 namespace pz_020
-{  
-    class Program
-    {        
-        static void print(object a)
+{
+    internal class Program
+    {
+        private static bool Ddouble()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.Write(a);
-            Console.ResetColor();
+            bool yes = false;
+            if (Console.ReadKey().Key == ConsoleKey.Q && Console.ReadKey().Key == ConsoleKey.W) yes = true;
+            return yes;
         }
 
         static void Main(string[] args)
         {
-            ConplexNumber one = new ConplexNumber(-3.99f, -5.0109f);
-            ConplexNumber two = new ConplexNumber(2,0);
-            ConplexNumber three = new ConplexNumber(0,-6);
+            float a = -2.9f;
+            float b = 5.76f;
+            ConplexNumber q = new ConplexNumber(a, b);
+            q.GetComplexNumber();
 
-            ConplexNumber four = new ConplexNumber(-4.009284879105f, 9);
-            ConplexNumber five = new ConplexNumber(5, -10.995348957345f);
-            ConplexNumber six = new ConplexNumber();
+            a = 3f;
+            ConplexNumber w = new ConplexNumber(a);
+            w.GetComplexNumber();
+
+            a = 10f;
+            b = -0.2f;
+            ConplexNumber e = new ConplexNumber(a, b);
+            e.GetComplexNumber();
+
+            a = 7.93f;
+            b = 0.16f;
+            ConplexNumber r = new ConplexNumber(a, b);
+            r.GetComplexNumber();
+
+            b = 0;
+            ConplexNumber t = new ConplexNumber(a, b);
+            t.GetComplexNumber();
 
 
-            ConplexNumber.GetConplexNumber(one);
-            ConplexNumber.GetConplexNumber(two);
-            ConplexNumber.GetConplexNumber(three);
+            a = 5.1f;
+            b = -0.99f;
+            NegativeCN z = new NegativeCN(a, b);
+            z.GetComplexNumber();
 
-            ConplexNumber.GetConplexNumber(four);
-            ConplexNumber.GetConplexNumber(five);
+            a = -10.10f;
+            b = 4.3f;
+            NegativeCN x = new NegativeCN(a, b);
+            x.GetComplexNumber();
 
-            ConplexNumber.GetConplexNumber(six);
+            ConplexNumber.About();
 
-            print(five.ToString() + "\n");
-
-            
-
-            
+            if (Ddouble()) ConplexNumber.Star();
         }
     }
 }

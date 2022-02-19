@@ -1,78 +1,143 @@
 ﻿using System;
 
-/*  amount - счетчик
- *  {(qq.b>0?'+':'-')}{Math.Abs     в гетнумбер чтобы "--" и "+-" не было на вывод
- *  переопределение тустринг обязательно
- *  Game() не до конца реализованный функционал на будущее 
- */
+/*
+*  версия 2(текущая): _____
+*  Решение pz_020 переписано с нуля
+*  Game() -> Star() реализован 
+*  
+*/
 
 namespace pz_020
 {
     class ConplexNumber
     {
         private float a;
-        private const char i = 'i';
+        public float A
+        {
+            get { return a; }
+            set { a = value; }
+        }
         private float b;
-        private ulong amount;
-        //private string negative_positive = $"{(a<0?"-":"+")}{}";
-
-        public ConplexNumber(float A, float B) {a=A; b=B; amount++; }
-        public ConplexNumber() { amount++; }
-
-        public static void GetConplexNumber(ConplexNumber qq)
+        public float B
         {
-            
-            if (qq.a != 0 & qq.b != 0)
-                Console.WriteLine($"ConplexNumber: {qq.a}{(qq.b>0?'+':'-')}{Math.Abs(qq.b)}{i}");
-            else if (qq.a == 0 & qq.b != 0) Console.WriteLine($"ConplexNumber: {qq.b}{i}");
-            else if (qq.b == 0) Console.WriteLine($"Number: {qq.a}");
+            get { return b; }
+            set { b = value; }
+        }
+        private char i;
+        public char I
+        {
+            get { return i = 'i'; }
         }
 
-        
-        public override string ToString()
+        private static ulong nocomplex;
+        private static ulong fullcomplex;
+        private static ulong total;
+
+        public ConplexNumber(float num1, float num2)
         {
-            return $"{a}{(b > 0 ? '+' : '-')}{Math.Abs(b)}{i}";
+            A = num1;
+            B = num2;
+            total++;
+            if (a != 0 & b != 0) fullcomplex++;
+            if (b == 0) nocomplex++;
         }
 
-        public void GetInfo()
+        public ConplexNumber(float num1)
+        {
+            if (DateTime.Now.Ticks % 2 == 1) A = num1;
+            else B = num1;
+            total++;
+            if (a != 0f & b != 0f) fullcomplex++;
+            if (b == 0f) nocomplex++;
+        }
+
+        private static void print(object a)
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(a);
+            Console.ResetColor();
+        }
+
+        public static void About()
+        {
+            print(
+                $"\tabout\n" +
+                $"noconplex: {nocomplex}\n" +
+                $"fullcomplex: {fullcomplex}\n" +
+                $"{new string('—', 20)}\n" +
+                $"total: {total}"
+                                );
+        }
+
+        protected string CNString(float num1, float num2)
+        {
+            if (A == 0) return $"{B}{I}";
+            if (B > 0) return $"{A}+{B}{I}";
+            if (B == 0) return $"{A}";
+            if (B < 0) return $"{A}-{Math.Abs(B)}{I}";
+            return "";
+        }
+
+        public virtual void GetComplexNumber()
         {
             Console.WriteLine(
-                $"numbers of conn numbers: {amount}\n"
-                //+
-                //$"\tof them {negative_positive} un_conplex"
-                );
+                $"real: {A}\n" +
+                $"imaginary: {B}\n" +
+                $"CN: {CNString(A, B)}\n"
+                                );
         }
 
-        //public static void Game()
-        //{
-        //    Console.CursorVisible = false;
-        //    int x = 20;
-        //    int y = 15;
-        //    ConsoleKeyInfo k;
+        public static void Star()
+        {
+            Console.CursorVisible = false;
+            int x = 20;
+            int y = 15;
+            ConsoleKeyInfo k;
 
-        //    Console.WriteLine("рисовать(Y/N): ");
-        //    bool painted = Console.ReadKey().Key == ConsoleKey.Y ? true : false;
-        //    Console.Clear();
+            Console.WriteLine("\n\nрисовать(Y/N): ");
+            bool painted = Console.ReadKey().Key == ConsoleKey.Y ? true : false;
+            Console.Clear();
 
-        //    do
-        //    {                
-        //        Console.SetCursorPosition(1, 1);
-        //        Console.WriteLine($"{x}\t{y}");
-        //        Console.SetCursorPosition(x, y);
-        //        Console.Write((char)3);
-        //        k = Console.ReadKey(true);
+            do
+            {
+                Console.SetCursorPosition(1, 1);
+                Console.Write(new String(' ', 9));
+                Console.SetCursorPosition(1, 1);
+                Console.WriteLine($"{x}\t{y}");
+                Console.SetCursorPosition(x, y);
+                Console.Write('☼');
+                k = Console.ReadKey(true);
 
-        //        if (k.Key == ConsoleKey.W)
-        //            y--;
-        //        else if (k.Key == ConsoleKey.S)
-        //            y++;
-        //        else if (k.Key == ConsoleKey.A)
-        //            x--;
-        //        else if (k.Key == ConsoleKey.D)
-        //            x++;
 
-        //        if (painted == false) Console.Clear();
-        //    } while (k.Key != ConsoleKey.Escape);
-        //}
+                if (k.Key == ConsoleKey.W)
+                {
+                    if (y == 0) y = Console.WindowHeight - 1;
+                    else y--;
+                }
+                else if (k.Key == ConsoleKey.S)
+                {
+                    if (y == Console.WindowHeight - 2) y = 0;
+                    else y++;
+                }
+                else if (k.Key == ConsoleKey.A)
+                {
+                    if (x == 0) x = Console.WindowWidth - 2;
+                    else x -= 2;
+                }
+                else if (k.Key == ConsoleKey.D)
+                {
+                    if (x == Console.WindowWidth - 2) x = 0;
+                    else x += 2;
+                }
+                else if (k.Key == ConsoleKey.Spacebar)
+                {
+                    Console.Clear();
+                }
+
+                if (painted == false) Console.Clear();
+            } while (k.Key != ConsoleKey.Escape);
+        }
+
     }
 }
