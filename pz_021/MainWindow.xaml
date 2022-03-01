@@ -46,7 +46,6 @@
         <Button x:Name="button06" Content="6" FontSize="20" Grid.Column="2" Grid.Row="3" Margin="5" Click="button06_Click"/>
         <Button x:Name="button03" Content="3" FontSize="20" Grid.Column="2" Grid.Row="4" Margin="5" Click="button03_Click"/>
 
-
         <Border Grid.ColumnSpan="4" Height="45" Background="Aquamarine" BorderThickness="0" CornerRadius="20" Margin="15" VerticalAlignment="Center" HorizontalAlignment="Stretch">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="20" ShadowDepth="10" Direction="270" Color="LightGray"/>
