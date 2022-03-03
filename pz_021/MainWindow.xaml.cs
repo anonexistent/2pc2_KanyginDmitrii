@@ -41,49 +41,14 @@ namespace pz_021
             if (!(tb_result.Text == "") && !tb.Text.Contains("+") && !tb.Text.Contains("-") && !tb.Text.Contains("*") && !tb.Text.Contains("*")) return true;
             return false;
         }
-                
-        private void button_result_Click(object sender, RoutedEventArgs e)
+
+        private void GetResult()
         {
-            ////берем из тб_резалт строку и меняем текст в тб на конечный результат
-            //string tb_result_str = tb_result.Text;
-            //string[] numbers = tb_result.Text.Split(act1);
-            //int i = 0;
-
-            //while (i < numbers.Length & tb_result_str.Contains(numbers[numbers.Length - 2]))
-            //{
-            //    tb_result_str.Replace(numbers[i], "");
-            //    i++;
-            //}
-            //foreach (var item in numbers)
-            //{
-            //    MessageBox.Show(item);
-            //}
-            //MessageBox.Show(tb_result_str.Replace(numbers[0], ""));
-
-            //foreach (var item in tb_result_str)
-            //{
-            //    MessageBox.Show(item);
-            //    tb_result_str = tb_result_str.Replace(item, ' ');
-            //}
-
-            //string q0 = "94+4+602";
-
-            //Regex regx = new Regex(@"\d+");
-            //Regex regex1 = new Regex(@"\W?");
-            //MatchCollection matches = regx.Matches(q0);
-            //MatchCollection match1 = regex1.Matches(q0);
-            //if (matches.Count > 0)
-            //{
-            //    foreach (Match match in matches) Console.WriteLine(match);
-            //    foreach (Match match in match1) Console.WriteLine(match);
-            //}
-
-            //Console.WriteLine();
             Regex regex = new Regex(@"\D");
             Regex regex1 = new Regex(@"\d+");
             Match match = regex.Match(tb_result.Text);
             MatchCollection match1 = regex1.Matches(tb_result.Text);
-            if (match1.Count>1)
+            if (match1.Count > 1)
             {
                 switch (match.Value)
                 {
@@ -104,6 +69,47 @@ namespace pz_021
                         break;
                 }
             }
+        }
+                
+        private void button_result_Click(object sender, RoutedEventArgs e)
+        {
+            { ////берем из тб_резалт строку и меняем текст в тб на конечный результат
+              //string tb_result_str = tb_result.Text;
+              //string[] numbers = tb_result.Text.Split(act1);
+              //int i = 0;
+
+                //while (i < numbers.Length & tb_result_str.Contains(numbers[numbers.Length - 2]))
+                //{
+                //    tb_result_str.Replace(numbers[i], "");
+                //    i++;
+                //}
+                //foreach (var item in numbers)
+                //{
+                //    MessageBox.Show(item);
+                //}
+                //MessageBox.Show(tb_result_str.Replace(numbers[0], ""));
+
+                //foreach (var item in tb_result_str)
+                //{
+                //    MessageBox.Show(item);
+                //    tb_result_str = tb_result_str.Replace(item, ' ');
+                //}
+
+                //string q0 = "94+4+602";
+
+                //Regex regx = new Regex(@"\d+");
+                //Regex regex1 = new Regex(@"\W?");
+                //MatchCollection matches = regx.Matches(q0);
+                //MatchCollection match1 = regex1.Matches(q0);
+                //if (matches.Count > 0)
+                //{
+                //    foreach (Match match in matches) Console.WriteLine(match);
+                //    foreach (Match match in match1) Console.WriteLine(match);
+                //}
+
+                //Console.WriteLine();
+            }
+            GetResult();
         }
 
         private void button_1x_Click(object sender, RoutedEventArgs e)
@@ -227,7 +233,7 @@ namespace pz_021
                     if (tb_result.Text.Length != 0) tb_result.Text = tb_result.Text.Substring(0, tb_result.Text.Length - 1);
                     break;
                 case Key.Enter:
-                    //должен делать тоже самое тчо button_result_Click
+                    GetResult();
                     break;
                 case Key.Escape:
                     Process.GetCurrentProcess().Kill();
@@ -263,6 +269,18 @@ namespace pz_021
                     break;
                 case Key.NumPad9:
                     tb_result.Text += 9;
+                    break;
+                case Key.Add:
+                    if (EndOrNotEnd(tb_result)) tb_result.Text += '+';
+                    break;
+                case Key.Subtract:
+                    if (EndOrNotEnd(tb_result)) tb_result.Text += '-';
+                    break;
+                case Key.Divide:
+                    if (EndOrNotEnd(tb_result)) tb_result.Text += '/';
+                    break;
+                case Key.Multiply:
+                    if (EndOrNotEnd(tb_result)) tb_result.Text += '*';
                     break;
 
                 case Key.OemTilde:
