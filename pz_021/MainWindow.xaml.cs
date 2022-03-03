@@ -16,6 +16,10 @@ using System.Windows.Shapes;
 using System.Net;
 using System.Text.RegularExpressions;
 
+/*
+    версия 2
+ */
+
 namespace pz_021
 {
     /// <summary>
@@ -28,12 +32,37 @@ namespace pz_021
             InitializeComponent();            
         }
 
+        /*  ^: соответствие должно начинаться в начале строки (например, выражение @"^пр\w*" соответствует слову "привет" в строке "привет мир")
+
+            $: конец строки (например, выражение @"\w*ир$" соответствует слову "мир" в строке "привет мир", так как часть "ир" находится в самом конце)
+
+            .: знак точки определяет любой одиночный символ (например, выражение "м.р" соответствует слову "мир" или "мор")
+
+            *: предыдущий символ повторяется 0 и более раз
+
+            +: предыдущий символ повторяется 1 и более раз
+
+            ?: предыдущий символ повторяется 0 или 1 раз
+
+            \s: соответствует любому пробельному символу
+
+            \S: соответствует любому символу, не являющемуся пробелом
+
+            \w: соответствует любому алфавитно-цифровому символу
+
+            \W: соответствует любому не алфавитно-цифровому символу
+
+            \d: соответствует любой десятичной цифре
+
+            \D : соответствует любому символу, не являющемуся десятичной цифрой*/
+
+        public Random uuu = new Random();
         string[] act = {"+","-","*","/"}; 
         char[] act1 = { '+', '-', '*', '/' };
 
-        private static bool EndOrNotEnd(TextBlock tb)
+        private bool EndOrNotEnd(TextBlock tb)
         {
-            if (!tb.Text.EndsWith("+") && !tb.Text.EndsWith("-") && !tb.Text.EndsWith("*") && !tb.Text.EndsWith("*")) return true;
+            if (!(tb_result.Text == "") && !tb.Text.Contains("+") && !tb.Text.Contains("-") && !tb.Text.Contains("*") && !tb.Text.Contains("*")) return true;
             return false;
         }
                 
@@ -74,29 +103,74 @@ namespace pz_021
             //}
 
             //Console.WriteLine();
-
+            Regex regex = new Regex(@"\D");
+            Regex regex1 = new Regex(@"\d+");
+            Match match = regex.Match(tb_result.Text);
+            MatchCollection match1 = regex1.Matches(tb_result.Text);
+            if (match1.Count>1)
+            {
+                switch (match.Value)
+                {
+                    case "+":
+                        tb_result.Text = (Int32.Parse(match1[0].Value) + Int32.Parse(match1[1].Value)).ToString();
+                        break;
+                    case "-":
+                        tb_result.Text = (Int32.Parse(match1[0].Value) - Int32.Parse(match1[1].Value)).ToString();
+                        break;
+                    case "/":
+                        tb_result.Text = (Int32.Parse(match1[0].Value) / Int32.Parse(match1[1].Value)).ToString();
+                        break;
+                    case "*":
+                        tb_result.Text = (Int32.Parse(match1[0].Value) + Int32.Parse(match1[1].Value)).ToString();
+                        break;
+                    default:
+                        MessageBox.Show("error((9(", "error((9(");
+                        break;
+                }
+            }
         }
 
         private void button_1x_Click(object sender, RoutedEventArgs e)
         {
-            if (tb_result!=null) tb_result.Text = $"1 / {tb_result.Text}";
+            if (EndOrNotEnd(tb_result)) tb_result.Text = $"1/{tb_result.Text}"; 
         }
 
         private void button_x2_Click(object sender, RoutedEventArgs e)
         {
-            //double time1 = 0;
-            //double.TryParse(string.Join("", tb_result.Text.Where(w => char.IsDigit(w))), out time1);
-            //tb_result.Text = Math.Pow(time1, 2).ToString();
+            try
+            {
+                double time1 = 0;
+                double.TryParse(string.Join("", tb_result.Text.Where(w => char.IsDigit(w))), out time1);
+                Regex regex = new Regex(@"\D*\d+\D*");
+                MatchCollection matches = regex.Matches(tb_result.Text);
+                tb_result.Text = Math.Pow(Int32.Parse(matches[0].ToString()), 2).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString().ToUpper(), "error((9(");
+            }
+            
         }
 
         private void button_sqrt_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                double time1 = 0;
+                double.TryParse(string.Join("", tb_result.Text.Where(w => char.IsDigit(w))), out time1);
+                Regex regex = new Regex(@"\D*\d+\D*");
+                MatchCollection matches = regex.Matches(tb_result.Text);
+                tb_result.Text = Math.Sqrt(Int32.Parse(matches[0].ToString())).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString().ToUpper(), "error((9(");
+            }
         }
 
         private void button_proc_Click(object sender, RoutedEventArgs e)
         {
-
+            tb_result.Text = "";
         }
 
         private void button_plus_Click(object sender, RoutedEventArgs e)
