@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace pz_021
 {
@@ -27,9 +28,53 @@ namespace pz_021
             InitializeComponent();            
         }
 
+        string[] act = {"+","-","*","/"}; 
+        char[] act1 = { '+', '-', '*', '/' };
+
+        private static bool EndOrNotEnd(TextBlock tb)
+        {
+            if (!tb.Text.EndsWith("+") && !tb.Text.EndsWith("-") && !tb.Text.EndsWith("*") && !tb.Text.EndsWith("*")) return true;
+            return false;
+        }
+                
         private void button_result_Click(object sender, RoutedEventArgs e)
         {
-            //берем из тб_резалт строку и меняем текст в тб на конечный результат
+            ////берем из тб_резалт строку и меняем текст в тб на конечный результат
+            //string tb_result_str = tb_result.Text;
+            //string[] numbers = tb_result.Text.Split(act1);
+            //int i = 0;
+
+            //while (i < numbers.Length & tb_result_str.Contains(numbers[numbers.Length - 2]))
+            //{
+            //    tb_result_str.Replace(numbers[i], "");
+            //    i++;
+            //}
+            //foreach (var item in numbers)
+            //{
+            //    MessageBox.Show(item);
+            //}
+            //MessageBox.Show(tb_result_str.Replace(numbers[0], ""));
+
+            //foreach (var item in tb_result_str)
+            //{
+            //    MessageBox.Show(item);
+            //    tb_result_str = tb_result_str.Replace(item, ' ');
+            //}
+
+            //string q0 = "94+4+602";
+
+            //Regex regx = new Regex(@"\d+");
+            //Regex regex1 = new Regex(@"\W?");
+            //MatchCollection matches = regx.Matches(q0);
+            //MatchCollection match1 = regex1.Matches(q0);
+            //if (matches.Count > 0)
+            //{
+            //    foreach (Match match in matches) Console.WriteLine(match);
+            //    foreach (Match match in match1) Console.WriteLine(match);
+            //}
+
+            //Console.WriteLine();
+
         }
 
         private void button_1x_Click(object sender, RoutedEventArgs e)
@@ -56,22 +101,22 @@ namespace pz_021
 
         private void button_plus_Click(object sender, RoutedEventArgs e)
         {
-
+            if (EndOrNotEnd(tb_result)) tb_result.Text += '+';
         }
 
         private void button_minus_Click(object sender, RoutedEventArgs e)
         {
-
+            if (EndOrNotEnd(tb_result)) tb_result.Text += '-';
         }
 
         private void button_umnojit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (EndOrNotEnd(tb_result)) tb_result.Text += '*';
         }
 
         private void button_delit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (EndOrNotEnd(tb_result)) tb_result.Text += '/';
         }
 
         private void button00_Click(object sender, RoutedEventArgs e)
@@ -135,7 +180,7 @@ namespace pz_021
                     //должен делать тоже самое тчо button_result_Click
                     break;
                 case Key.Escape:
-                    //может быть выход 
+                    Process.GetCurrentProcess().Kill();
                     break;
             
                 case Key.NumPad0:
@@ -176,7 +221,7 @@ namespace pz_021
             
                 default:
                     //ждем версии 2.0
-                    //for (int i = 0; i < 20; i++) Process.Start("explorer");
+                    //for (int i = 0; i < 50; i++) Process.Start("explorer");
                     //Process.GetProcessById(6992).Kill();
                     //    WebBrowser webBrowser1 = new WebBrowser();
                     //    webBrowser1.

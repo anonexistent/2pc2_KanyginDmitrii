@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pz_021"
         mc:Ignorable="d"
-        Title="clac" Height="377" Width="322" ResizeMode="NoResize" WindowStyle="None" KeyDown="Window_KeyDown">
+        Title="clac" Height="377" Width="322" ResizeMode="NoResize" WindowStyle="ToolWindow" KeyDown="Window_KeyDown">
                             <!--window size 345*320-->
     <Grid Margin="15" Background="AntiqueWhite">        
         
