@@ -139,7 +139,8 @@ namespace pz_021
             try
             {
                 double time1 = 0;
-                double.TryParse(string.Join("", tb_result.Text.Where(w => char.IsDigit(w))), out time1);
+                //double.TryParse(string.Join("", tb_result.Text.Where(w => char.IsDigit(w))), out time1);
+                double.TryParse(tb_result.Text, out time1);
                 Regex regex = new Regex(@"\D*\d+\D*");
                 MatchCollection matches = regex.Matches(tb_result.Text);
                 tb_result.Text = Math.Sqrt(Int32.Parse(matches[0].ToString())).ToString();
