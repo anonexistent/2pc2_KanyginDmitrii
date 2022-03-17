@@ -6,17 +6,29 @@
         xmlns:local="clr-namespace:WpfA"
         mc:Ignorable="d"        
         WindowStyle="ThreeDBorderWindow" Title="Window" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Green"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <!--BorderBrush="Green" BorderThickness="2"-->
+        </Style>
+
+        <!--app.xaml-->
+    </Window.Resources>
+    
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Top">            
+            <StackPanel DockPanel.Dock="Top">
                 <Menu Background="AliceBlue">
                     <MenuItem Header="File">
-                        <MenuItem Header="open"/>
+                        <MenuItem Header="open" Click="MenuItem_Open_Click"/>
                         <MenuItem Header="new"/>
-                        <MenuItem Header="save" Click="MenuItem_Click"/>
+                        <MenuItem Header="save"/>
                     </MenuItem>
                     <MenuItem Header="Sample">
-                        <MenuItem Header="create"/>
+                        <MenuItem Header="create" Click="MenuItem_Create_Click"/>
                         <MenuItem Header="load"/>
                     </MenuItem>
                     <MenuItem Header="About">
@@ -26,15 +38,15 @@
                 </Menu>
 
                 <WrapPanel Height="25" >
-                    <Button  Cursor="Hand" Margin="3">
+                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
                         <Button.ToolTip>
                             <ToolTip Content="qwerty1"/>
                         </Button.ToolTip>
                         <Button.Content>
-                            <Image Source="/icons/italic_em_emphasis_format_editor_tool_icon_145968.png" />
+                            <Image Source="/icons/italic_em_emphasis_format_editor_tool_icon_145968.png"/>
                         </Button.Content>
                     </Button>
-                    <Button Cursor="Hand" Margin="3">
+                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
                         <Button.ToolTip>
                             <ToolTip Content="qwerty2"/>
                         </Button.ToolTip>
@@ -42,21 +54,27 @@
                             <Image Source="/icons/bold_format_editor_tool_icon_146015.png" />
                         </Button.Content>
                     </Button>
-                    <Button Cursor="Hand" Margin="3">
+                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
                         <Button.ToolTip>
                             <ToolTip Content="qwerty3"/>
                         </Button.ToolTip>
-                        <Button.Content>
-                            <Image Source="/icons/underline_format_editor_tool_icon_145920.png" />
-
-                        </Button.Content>
+                        <Image Source="/icons/underline_format_editor_tool_icon_145920.png" />
                     </Button>
-                </WrapPanel>            
-        </StackPanel>
-            <StatusBar DockPanel.Dock="Bottom" >dghfyhgfd</StatusBar>
-            <ListBox MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3"></ListBox>
-            <RichTextBox x:Name="rb0" DockPanel.Dock="Right" Margin="10" AcceptsTab="True" AcceptsReturn="True">
-            </RichTextBox>
+                    <Button x:Name="test" Width="21" Margin="3" Cursor="Hand" Click="test_Click"/>
+                </WrapPanel>
+            </StackPanel>
+            <StatusBar DockPanel.Dock="Bottom" >status</StatusBar>
+            <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3">
+                <ListBoxItem>first</ListBoxItem>
+            </ListBox>
+
+            <ScrollViewer>
+                <RichTextBox x:Name="rb0" DockPanel.Dock="Right" Margin="10" AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True">
+                    </RichTextBox>
+            </ScrollViewer>
+
+            
+
         </DockPanel>
     </Grid>
 </Window>
