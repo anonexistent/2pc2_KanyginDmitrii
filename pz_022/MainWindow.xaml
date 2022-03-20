@@ -25,7 +25,7 @@
                     <MenuItem Header="File">
                         <MenuItem Header="open" Click="MenuItem_Open_Click"/>
                         <MenuItem Header="new"/>
-                        <MenuItem Header="save"/>
+                        <MenuItem Header="save" Click="MenuItem_Click_1"/>
                     </MenuItem>
                     <MenuItem Header="Sample">
                         <MenuItem Header="create" Click="MenuItem_Create_Click"/>
@@ -38,7 +38,7 @@
                 </Menu>
 
                 <WrapPanel Height="25" >
-                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
+                    <Button Cursor="Hand" Margin="3" Height="19" Width="21" Click="Button_Click">
                         <Button.ToolTip>
                             <ToolTip Content="qwerty1"/>
                         </Button.ToolTip>
@@ -60,21 +60,35 @@
                         </Button.ToolTip>
                         <Image Source="/icons/underline_format_editor_tool_icon_145920.png" />
                     </Button>
+                    
                     <Button x:Name="test" Width="21" Margin="3" Cursor="Hand" Click="test_Click"/>
+                    
+                    <ComboBox x:Name="cb0" Width="auto" Margin="3">
+                        <ComboBoxItem Content="11" />
+                        <ComboBoxItem Content="20" />
+                    </ComboBox>
+
+
                 </WrapPanel>
             </StackPanel>
-            <StatusBar DockPanel.Dock="Bottom" >status</StatusBar>
-            <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3">
-                <ListBoxItem>first</ListBoxItem>
-            </ListBox>
+            <StatusBar DockPanel.Dock="Bottom">status</StatusBar>
+            
+                <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3" MouseRightButtonDown="lb0_MouseRightButtonDown">
+                    <ListBoxItem>first</ListBoxItem>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem x:Name="cm0delete" Header="delete last" Click="MenuItem_Click"/>
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
+                </ListBox>
 
-            <ScrollViewer>
+                <ScrollViewer>
                 <RichTextBox x:Name="rb0" DockPanel.Dock="Right" Margin="10" AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True">
                     </RichTextBox>
             </ScrollViewer>
-
             
 
         </DockPanel>
+        
     </Grid>
 </Window>
