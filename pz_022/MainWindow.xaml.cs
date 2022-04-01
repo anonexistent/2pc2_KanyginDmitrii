@@ -25,13 +25,13 @@ namespace WpfA
         public MainWindow()
         {
             InitializeComponent();
-
+            
         }
 
-        List<string> list0 = new List<string>();
+        List<int> list0 = new List<int>();        
 
         private string _ffile;
-        public string ffile
+        public string ffile 
         {
             get { return _ffile = "a11c.txt"; }
         }
@@ -44,8 +44,6 @@ namespace WpfA
             sw.Write("1,2,3,4,5");
             sw.Close();
             lb0.Items.Add($"{System.IO.Path.GetFileName(filename)}");
-
-
 
             //using (FileStream fs = new FileStream(path0, FileMode.Create)) 
             //{
@@ -81,31 +79,13 @@ namespace WpfA
             
         }
 
+        private void MenuItem_Create_Click(object sender, RoutedEventArgs e) => CreateFile("wht.txt");  //menu create
 
-        private void MenuItem_Create_Click(object sender, RoutedEventArgs e)
-        {
-            //menu create
-            CreateFile("wht.txt");
-        }
+        private void MenuItem_Open_Click(object sender, RoutedEventArgs e) => OpenFile();   //file open
 
-        private void MenuItem_Open_Click(object sender, RoutedEventArgs e)
-        {
-            //file open
-            OpenFile();
-        }
+        private void test_Click(object sender, RoutedEventArgs e) => lb0.Items.Add("1");
 
-        private void test_Click(object sender, RoutedEventArgs e)
-        {
-            //button0000000
-            lb0.Items.Add("1");
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            //contex listbox
-            lb0.Items.RemoveAt(lb0.Items.Count - 1);
-
-        }
+        private void MenuItem_Click(object sender, RoutedEventArgs e) => lb0.Items.RemoveAt(lb0.Items.Count - 1);   //contex listbox
 
         private void lb0_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -127,8 +107,12 @@ namespace WpfA
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             //button save
-
             
         }
+
+
+        //  Паттерн "Команда" (Command)
+
+
     }
 }

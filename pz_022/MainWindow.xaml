@@ -18,7 +18,7 @@
         <!--app.xaml-->
     </Window.Resources>
     
-    <Grid>
+    <Grid x:Name="MainGrid">
         <DockPanel>
             <StackPanel DockPanel.Dock="Top">
                 <Menu Background="AliceBlue">
@@ -73,11 +73,11 @@
             </StackPanel>
             <StatusBar DockPanel.Dock="Bottom">status</StatusBar>
             
-                <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3" MouseRightButtonDown="lb0_MouseRightButtonDown">
+                <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3"  MouseRightButtonDown="lb0_MouseRightButtonDown">
                     <ListBoxItem>first</ListBoxItem>
                     <ListBox.ContextMenu>
                         <ContextMenu>
-                            <MenuItem x:Name="cm0delete" Header="delete last" Click="MenuItem_Click"/>
+                            <MenuItem x:Name="cm0delete" Header="delete last" IsEnabled="False" Click="MenuItem_Click"/>
                         </ContextMenu>
                     </ListBox.ContextMenu>
                 </ListBox>

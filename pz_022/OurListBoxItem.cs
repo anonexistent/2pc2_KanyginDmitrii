@@ -33,10 +33,10 @@ namespace WpfA
             this.BorderBrush = Brushes.Green;
             this.Margin = new Thickness(1);
             this.Cursor = Cursors.Hand;
-            this.Content = System.IO.Path.GetFileName(file0);
+            this.Content = Path.GetFileName(file0);
+
         }
-
-
+        
 
     }
 }
