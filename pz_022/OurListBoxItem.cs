@@ -34,9 +34,15 @@ namespace WpfA
             this.Margin = new Thickness(1);
             this.Cursor = Cursors.Hand;
             this.Content = Path.GetFileName(file0);
-
+            this.MouseDoubleClick += olbi_select;
         }
-        
-
+        public void olbi_select(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.Document.Blocks.Clear();
+            StreamReader sr = new StreamReader(OurFile);
+            string line = sr.ReadToEnd();
+            sr.Close();
+            ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.AppendText(line);
+        }
     }
 }

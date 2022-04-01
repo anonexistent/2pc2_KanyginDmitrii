@@ -14,8 +14,9 @@
             <Setter Property="Cursor" Value="Hand"/>
             <!--BorderBrush="Green" BorderThickness="2"-->
         </Style>
+        
 
-        <!--app.xaml-->
+            <!--app.xaml-->
     </Window.Resources>
     
     <Grid x:Name="MainGrid">
@@ -74,7 +75,7 @@
             <StatusBar DockPanel.Dock="Bottom">status</StatusBar>
             
                 <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3"  MouseRightButtonDown="lb0_MouseRightButtonDown">
-                    <ListBoxItem>first</ListBoxItem>
+                    <ListBoxItem GotFocus="ListBoxItem_GotFocus">first</ListBoxItem>
                     <ListBox.ContextMenu>
                         <ContextMenu>
                             <MenuItem x:Name="cm0delete" Header="delete last" IsEnabled="False" Click="MenuItem_Click"/>

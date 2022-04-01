@@ -17,6 +17,8 @@ using Microsoft.Win32;
 
 namespace WpfA
 {
+
+
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
@@ -25,7 +27,6 @@ namespace WpfA
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
         List<int> list0 = new List<int>();        
@@ -36,7 +37,7 @@ namespace WpfA
             get { return _ffile = "a11c.txt"; }
         }
 
-
+        
         public void CreateFile(string filename)
         {
             string path0 = @"..\data\" + filename;
@@ -67,7 +68,8 @@ namespace WpfA
 
                 //lb0.Items.Add($"{System.IO.Path.GetFileName(open.FileName)}");
 
-                OurListBoxItem our0 = new OurListBoxItem(System.IO.Path.GetFileName(open.FileName));
+                OurListBoxItem our0 = new OurListBoxItem(System.IO.Path.GetFullPath(open.FileName));
+                //our0.GotFocus += ListBoxItem_GotFocus;
 
                 lb0.Items.Add(our0);
             }
@@ -84,7 +86,7 @@ namespace WpfA
         private void MenuItem_Open_Click(object sender, RoutedEventArgs e) => OpenFile();   //file open
 
         private void test_Click(object sender, RoutedEventArgs e) => lb0.Items.Add("1");
-
+        
         private void MenuItem_Click(object sender, RoutedEventArgs e) => lb0.Items.RemoveAt(lb0.Items.Count - 1);   //contex listbox
 
         private void lb0_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -108,6 +110,12 @@ namespace WpfA
         {
             //button save
             
+        }
+
+        public void ListBoxItem_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Test");
+
         }
 
 
