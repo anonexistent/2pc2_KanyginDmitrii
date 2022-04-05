@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WpfA"
         mc:Ignorable="d"        
-        WindowStyle="ThreeDBorderWindow" Title="Window" Height="450" Width="800" ResizeMode="NoResize">
+        WindowStyle="ToolWindow" Title="Window" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="BorderThickness" Value="2"/>
@@ -18,64 +19,96 @@
 
             <!--app.xaml-->
     </Window.Resources>
-    
-    <Grid x:Name="MainGrid">
-        <DockPanel>
-            <StackPanel DockPanel.Dock="Top">
-                <Menu Background="AliceBlue">
-                    <MenuItem Header="File">
-                        <MenuItem Header="open" Click="MenuItem_Open_Click"/>
-                        <MenuItem Header="new"/>
-                        <MenuItem Header="save" Click="MenuItem_Click_1"/>
-                    </MenuItem>
-                    <MenuItem Header="Sample">
-                        <MenuItem Header="create" Click="MenuItem_Create_Click"/>
-                        <MenuItem Header="load"/>
-                    </MenuItem>
-                    <MenuItem Header="About">
-                        <MenuItem Header="about program"/>
-                        <MenuItem Header="about autors"/>
-                    </MenuItem>
-                </Menu>
 
-                <WrapPanel Height="25" >
-                    <Button Cursor="Hand" Margin="3" Height="19" Width="21" Click="Button_Click">
-                        <Button.ToolTip>
-                            <ToolTip Content="qwerty1"/>
-                        </Button.ToolTip>
-                        <Button.Content>
-                            <Image Source="/icons/italic_em_emphasis_format_editor_tool_icon_145968.png"/>
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
-                        <Button.ToolTip>
-                            <ToolTip Content="qwerty2"/>
-                        </Button.ToolTip>
-                        <Button.Content>
-                            <Image Source="/icons/bold_format_editor_tool_icon_146015.png" />
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand" Margin="3" Height="19" Width="21">
-                        <Button.ToolTip>
-                            <ToolTip Content="qwerty3"/>
-                        </Button.ToolTip>
-                        <Image Source="/icons/underline_format_editor_tool_icon_145920.png" />
-                    </Button>
+    <Border Margin="15" BorderBrush="Black" BorderThickness="1" Background="AliceBlue" CornerRadius="15" Padding="13">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="15" ShadowDepth="15" Color="LightGray"/>
+        </Border.Effect>
+        <Grid x:Name="MainGrid">
+            <DockPanel x:Name="dockpanel0">
+                <StackPanel x:Name="stackpanel0" DockPanel.Dock="Top">
+                    <Menu Background="AliceBlue">
+                        <MenuItem Header="File">
+                            <MenuItem Header="open" Click="MenuItem_Open_Click"/>
+                            <MenuItem Header="new" Click="MenuItem_Click_2"/>
+                            <MenuItem Header="save" Click="MenuItem_Click_1"/>
+                        </MenuItem>
+                        <MenuItem Header="Sample">
+                            <MenuItem Header="create"/>
+                            <MenuItem Header="load" Click="MenuItem_Create_Click"/>
+                        </MenuItem>
+                        <MenuItem Header="About">
+                            <MenuItem Header="about program"/>
+                            <MenuItem Header="about autors"/>
+                        </MenuItem>
+                    </Menu>
+
+                    <WrapPanel Height="25" >
+                        <Button Command="EditingCommands.ToggleItalic" CommandTarget="{Binding ElementName=rb0}" Cursor="Hand" Margin="3" Height="20" Width="22" Style="{DynamicResource MaterialDesignIconButton}">
+                            <Button.ToolTip>
+                                <ToolTip Content="qwerty1"/>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/icons/italic_em_emphasis_format_editor_tool_icon_145968.png"/>
+                            </Button.Content>
+                        </Button>
+
+                        <Button Command="EditingCommands.ToggleBold" CommandTarget="{Binding ElementName=rb0}" Cursor="Hand" Margin="3" Height="20" Width="22" Style="{DynamicResource MaterialDesignIconButton}">
+                            <Button.ToolTip>
+                                <ToolTip Content="qwerty2"/>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/icons/bold_format_editor_tool_icon_146015.png" />
+                            </Button.Content>
+                        </Button>
+
+                        <Button Command="EditingCommands.ToggleUnderline" CommandTarget="{Binding ElementName=rb0}" Cursor="Hand" Margin="3" Height="20" Width="22" Style="{DynamicResource MaterialDesignIconButton}">
+                            <Button.ToolTip>
+                                <ToolTip Content="qwerty3"/>
+                            </Button.ToolTip>
+                            <Button.Content>
+                                <Image Source="/icons/underline_format_editor_tool_icon_145920.png"/>
+                            </Button.Content>
+                        </Button>
+
+                        <!--<ComboBox x:Name="cb0" Width="40" Margin="3" />-->
+
+
+                    </WrapPanel>
+                </StackPanel>
+                <StatusBar x:Name="statusbar0" DockPanel.Dock="Bottom">
+                    <StatusBar.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </ItemsPanelTemplate>
+                    </StatusBar.ItemsPanel>
+
+                    <TextBlock x:Name="sbleft">слева</TextBlock>
+                    <StatusBarItem Grid.Column="2" HorizontalAlignment="Right">
+                        <TextBlock x:Name="sbright">справа</TextBlock>
+                    </StatusBarItem>
                     
-                    <Button x:Name="test" Width="21" Margin="3" Cursor="Hand" Click="test_Click"/>
+                    <StatusBarItem Grid.Column="1" HorizontalAlignment="Center">
+                        <ComboBox x:Name="tempcombox0" Visibility="Hidden" Width="50"/>
+                    </StatusBarItem>
+                                     
+                    <StatusBarItem x:Name="button007" Grid.Column="2" Visibility="Hidden">
+                        <Button MinWidth="15" MaxHeight="25" Content="создать!!!"/>
+                    </StatusBarItem>
+                    <StatusBarItem Grid.Column="0" HorizontalAlignment="Right">
+                        <TextBox x:Name="temptextbox0" Visibility="Hidden" Width="100"></TextBox>
+                    </StatusBarItem>
+
                     
-                    <ComboBox x:Name="cb0" Width="auto" Margin="3">
-                        <ComboBoxItem Content="11" />
-                        <ComboBoxItem Content="20" />
-                    </ComboBox>
+                </StatusBar>
 
-
-                </WrapPanel>
-            </StackPanel>
-            <StatusBar DockPanel.Dock="Bottom">status</StatusBar>
-            
                 <ListBox x:Name="lb0" MinWidth="100" DockPanel.Dock="Left" Margin="10" BorderBrush="Red" BorderThickness="3"  MouseRightButtonDown="lb0_MouseRightButtonDown">
-                    <ListBoxItem GotFocus="ListBoxItem_GotFocus">first</ListBoxItem>
                     <ListBox.ContextMenu>
                         <ContextMenu>
                             <MenuItem x:Name="cm0delete" Header="delete last" IsEnabled="False" Click="MenuItem_Click"/>
@@ -84,12 +117,20 @@
                 </ListBox>
 
                 <ScrollViewer>
-                <RichTextBox x:Name="rb0" DockPanel.Dock="Right" Margin="10" AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True">
+                    <RichTextBox x:Name="rb0" Cursor="IBeam" DockPanel.Dock="Right" Margin="10" AcceptsTab="True" AcceptsReturn="True" SpellCheck.IsEnabled="True">
                     </RichTextBox>
-            </ScrollViewer>
-            
+                </ScrollViewer>
 
-        </DockPanel>
-        
-    </Grid>
+                <Popup x:Name="popup1" StaysOpen="False" Placement="Center" MinWidth="180"
+         AllowsTransparency="True"  >
+                    <TextBlock TextAlignment="Center" FontSize="24" Width="240" Background="LightPink" Opacity="0.8">
+                            "введите имя файла"
+                    </TextBlock>
+                </Popup>
+
+
+            </DockPanel>
+
+        </Grid>
+    </Border>
 </Window>

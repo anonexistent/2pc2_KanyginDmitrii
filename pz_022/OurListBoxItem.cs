@@ -39,10 +39,16 @@ namespace WpfA
         public void olbi_select(object sender, RoutedEventArgs e)
         {
             ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.Document.Blocks.Clear();
-            StreamReader sr = new StreamReader(OurFile);
-            string line = sr.ReadToEnd();
-            sr.Close();
-            ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.AppendText(line);
+            if (OurFile.Contains(".rtf")) ((MainWindow)System.Windows.Application.Current.MainWindow).RichBoxLoadRtf(((MainWindow)System.Windows.Application.Current.MainWindow).rb0, OurFile);
+            else
+            {
+                StreamReader sr = new StreamReader(OurFile);
+                string line = sr.ReadToEnd();
+                sr.Close();
+                ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.AppendText(line);
+                FileInfo fi = new FileInfo(OurFile);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).sbright.Text=fi.Length.ToString()+" b";
+            }
         }
     }
 }
