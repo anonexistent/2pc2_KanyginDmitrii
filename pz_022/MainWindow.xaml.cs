@@ -17,8 +17,6 @@ using Microsoft.Win32;
 
 namespace WpfA
 {
-
-
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
