@@ -99,7 +99,7 @@
                     </StatusBarItem>
                                      
                     <StatusBarItem x:Name="button007" Grid.Column="2" Visibility="Hidden">
-                        <Button MinWidth="15" MaxHeight="25" Content="создать!!!"/>
+                        <Button x:Name="butbut" MinWidth="15" MaxHeight="25" Content="создать!!!"/>
                     </StatusBarItem>
                     <StatusBarItem Grid.Column="0" HorizontalAlignment="Right">
                         <TextBox x:Name="temptextbox0" Visibility="Hidden" Width="100"></TextBox>

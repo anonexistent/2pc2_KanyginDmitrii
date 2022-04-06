@@ -145,7 +145,6 @@ namespace WpfA
             {
                 MessageBox.Show($"{ex.Message.ToUpper()}", "eror", MessageBoxButton.YesNoCancel);
             }
-
         }
 
         private void MenuItem_Create_Click(object sender, RoutedEventArgs e) => CreateFile("wht.txt");  //menu create
@@ -171,9 +170,7 @@ namespace WpfA
             //rb0.FontFamily;
 
             if (rb0.FontStyle != FontStyles.Italic) rb0.FontStyle = FontStyles.Italic;
-            else rb0.FontStyle = FontStyles.Normal;
-            
-
+            else rb0.FontStyle = FontStyles.Normal;         
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
@@ -215,7 +212,23 @@ namespace WpfA
             
             tempcombox0.Visibility = Visibility.Visible;
             temptextbox0.Visibility = Visibility.Visible;
+            butbut.Click += But_click;
+        }
+        private void But_click(object sender, RoutedEventArgs e)
+        {
+            string filelll = temptextbox0.Text;
+            stackpanel0.IsEnabled = true;
+            button007.Visibility = Visibility.Hidden;
+            lb0.IsEnabled = true ;
+            rb0.IsEnabled = true ;
+            popup1.IsOpen = false ;
+            tempcombox0.Visibility = Visibility.Hidden;
+            temptextbox0.Visibility = Visibility.Hidden;
 
+
+            FileStream fs = new FileStream(@"..\data\" + filelll + @".txt", FileMode.CreateNew); 
+            fs.Close();           
+            
         }
 
         //  Паттерн "Команда" (Command)
