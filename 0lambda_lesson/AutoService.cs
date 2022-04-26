@@ -1,11 +1,17 @@
-﻿namespace _0delegate
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _0lambda_lesson
 {
     internal class AutoService
     {
         string auto;
 
-        private Delegate1 _meth;
-        public Delegate1 meth
+        private MD _meth;
+        public MD meth
         {
             get { return _meth; }
         }
