@@ -43,7 +43,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0delegate", "0delegate\0del
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0lambda_lesson", "0lambda_lesson\0lambda_lesson.csproj", "{3D14057F-9852-4A32-A94D-53C665109C07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_023_delegate", "pz_023_delegate\pz_023_delegate.csproj", "{932F02C3-5BC6-45F9-98D2-0107798ABAE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_023_delegate", "pz_023_delegate\pz_023_delegate.csproj", "{932F02C3-5BC6-45F9-98D2-0107798ABAE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_024_event", "pz_024_event\pz_024_event.csproj", "{FA13E981-3526-4FF8-AA46-2E36A4296E86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,10 @@ Global
 		{932F02C3-5BC6-45F9-98D2-0107798ABAE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932F02C3-5BC6-45F9-98D2-0107798ABAE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932F02C3-5BC6-45F9-98D2-0107798ABAE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA13E981-3526-4FF8-AA46-2E36A4296E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA13E981-3526-4FF8-AA46-2E36A4296E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA13E981-3526-4FF8-AA46-2E36A4296E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA13E981-3526-4FF8-AA46-2E36A4296E86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
