@@ -37,11 +37,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_021", "pz_021\pz_021.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_022", "pz_022\pz_022.csproj", "{CC20EB4C-0D48-49C0-8466-53C5650C265F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "delegates", "delegates\delegates.csproj", "{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0delegates", "delegates\0delegates.csproj", "{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exercises", "exercises", "{94D52030-09C6-47D0-A448-BCA29786AFE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda_lesson", "lambda_lesson\lambda_lesson.csproj", "{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0lambda_lesson", "lambda_lesson\0lambda_lesson.csproj", "{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

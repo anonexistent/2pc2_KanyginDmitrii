@@ -6,7 +6,7 @@ namespace lambda_lesson
     {
         static void Main(string[] args)
         {
-
+        Console.WriteLine("gererg");
         }
     }
 }
