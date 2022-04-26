@@ -2,9 +2,9 @@
 
 delegate char Delegate1();
 
-namespace delegates
+namespace _0delegate
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {

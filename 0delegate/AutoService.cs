@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace delegates
+﻿namespace _0delegate
 {
-    class AutoService
+    internal class AutoService
     {
         string auto;
 

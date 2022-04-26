@@ -37,11 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_021", "pz_021\pz_021.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_022", "pz_022\pz_022.csproj", "{CC20EB4C-0D48-49C0-8466-53C5650C265F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0delegates", "delegates\0delegates.csproj", "{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exs", "exs", "{F02C31A8-FCE5-444F-9A9F-9FDA82F3CC07}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exercises", "exercises", "{94D52030-09C6-47D0-A448-BCA29786AFE8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0lambda_lesson", "lambda_lesson\0lambda_lesson.csproj", "{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0delegate", "0delegate\0delegate.csproj", "{70922BFE-DE80-4405-9005-0CD11E111FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,21 +115,16 @@ Global
 		{CC20EB4C-0D48-49C0-8466-53C5650C265F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC20EB4C-0D48-49C0-8466-53C5650C265F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC20EB4C-0D48-49C0-8466-53C5650C265F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEED9F2E-18DC-4E21-B12E-A9FB52D07500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70922BFE-DE80-4405-9005-0CD11E111FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70922BFE-DE80-4405-9005-0CD11E111FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70922BFE-DE80-4405-9005-0CD11E111FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70922BFE-DE80-4405-9005-0CD11E111FB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3DBE5EC2-2A01-47C8-AB01-5FCE37214F1C} = {94D52030-09C6-47D0-A448-BCA29786AFE8}
-		{EEED9F2E-18DC-4E21-B12E-A9FB52D07500} = {94D52030-09C6-47D0-A448-BCA29786AFE8}
+		{70922BFE-DE80-4405-9005-0CD11E111FB6} = {F02C31A8-FCE5-444F-9A9F-9FDA82F3CC07}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E6AF82A-A62F-4757-8AFC-3539F77E853A}
