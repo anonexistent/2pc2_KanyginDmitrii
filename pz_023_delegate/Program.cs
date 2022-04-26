@@ -8,7 +8,7 @@ namespace pz_023_delegate
     {
         static int CountIn(char a, string b)
         {
-            int x=0;
+            int x = 0;
             foreach (var item in b) if (item == a) x++;
             return x;
         }
@@ -19,7 +19,8 @@ namespace pz_023_delegate
             return -1;
         }
 
-        static int Main(string[] args) {
+        static int Main(string[] args)
+        {
             char one = '0';
             string two = "1234567890";
 
