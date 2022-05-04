@@ -1,4 +1,4 @@
-# 2pc2_KanyginDmitrii
+# 
 
 ____
 :star:
