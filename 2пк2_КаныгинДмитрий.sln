@@ -57,8 +57,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_026_pointer", "pz_026_po
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "exam", "exam\exam.csproj", "{9FC124D3-289E-4F52-96C9-AE192EABD2B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prog", "prog\prog.csproj", "{37CAC903-D161-415E-8F07-2F5D20E8B7FE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,10 +167,6 @@ Global
 		{9FC124D3-289E-4F52-96C9-AE192EABD2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FC124D3-289E-4F52-96C9-AE192EABD2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FC124D3-289E-4F52-96C9-AE192EABD2B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37CAC903-D161-415E-8F07-2F5D20E8B7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37CAC903-D161-415E-8F07-2F5D20E8B7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37CAC903-D161-415E-8F07-2F5D20E8B7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37CAC903-D161-415E-8F07-2F5D20E8B7FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
