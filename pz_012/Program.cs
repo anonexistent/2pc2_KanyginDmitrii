@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Linq;
-using System.Collections;
 
 namespace pz_012
 {
     class Program
     {
         static void print(object a)
-        {   Console.ForegroundColor = ConsoleColor.Red;
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.BackgroundColor = ConsoleColor.White;
             Console.Write(a);
             Console.ResetColor();
@@ -53,7 +52,7 @@ namespace pz_012
                 }
             }
             for (int i = 0; i < arr.Length; i++)
-                print(arr[i]+' ');
+                print(arr[i] + ' ');
         }
     }
 }

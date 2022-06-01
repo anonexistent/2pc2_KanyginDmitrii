@@ -5,7 +5,7 @@ namespace pz_10
 {
     class Program
     {
-        static void str(string a) 
+        static void str(string a)
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -30,29 +30,29 @@ namespace pz_10
             char b = ' ';
             for (int i = 0; i < myArray.Length; i++)
             {
-                myArray[i] = new char[uuu.Next(3,50)];
+                myArray[i] = new char[uuu.Next(3, 50)];
                 for (int j = 0; j < myArray[i].Length; j++)
                 {
-                    myArray[i][j]= (char)uuu.Next(128);
+                    myArray[i][j] = (char)uuu.Next(128);
                 }
             }
             str1("array: ");
             for (int i = 0; i < myArray.Length; i++)
             {
                 for (int j = 0; j < myArray[i].Length; j++)
-                    Console.Write($"{myArray[i][j]} ") ;
+                    Console.Write($"{myArray[i][j]} ");
                 str($"\n\t\t\t—\n");
             }
             //ищем последние элементы
-            for (int i = 0; i !=10 ; i++)
+            for (int i = 0; i != 10; i++)
                 myArray0[i] = myArray[i][^1];
             str1("last: ");
-            for (int i = 0; i !=10 ; i++)
+            for (int i = 0; i != 10; i++)
                 Console.Write($"{myArray0[i]} ");
             str("\n");
 
             //ищем максимальные элементы
-            for (int i = 0; i !=10; i++)
+            for (int i = 0; i != 10; i++)
                 myArray0[i] = myArray[i].Max();
             str1("max: ");
 
@@ -61,7 +61,7 @@ namespace pz_10
             str("\n");
 
             //вычисляем индекс и меняем местами
-            for(int i=0; i!=10 ;i++ )
+            for (int i = 0; i != 10; i++)
                 for (int j = 0; j < myArray[i].Length; j++)
                 {
                     if (myArray[i][j] == myArray[i].Max())

@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net;
-using System.Text.RegularExpressions;
 
 /*
     версия 2
@@ -29,11 +19,11 @@ namespace pz_021
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public Random uuu = new Random();
-        string[] act = {"+","-","*","/"}; 
+        string[] act = { "+", "-", "*", "/" };
         char[] act1 = { '+', '-', '*', '/' };
 
         private bool EndOrNotEnd(TextBlock tb)
@@ -70,7 +60,7 @@ namespace pz_021
                 }
             }
         }
-                
+
         private void button_result_Click(object sender, RoutedEventArgs e)
         {
             { ////берем из тб_резалт строку и меняем текст в тб на конечный результат
@@ -114,7 +104,7 @@ namespace pz_021
 
         private void button_1x_Click(object sender, RoutedEventArgs e)
         {
-            if (EndOrNotEnd(tb_result)) tb_result.Text = $"1/{tb_result.Text}"; 
+            if (EndOrNotEnd(tb_result)) tb_result.Text = $"1/{tb_result.Text}";
         }
 
         private void button_x2_Click(object sender, RoutedEventArgs e)
@@ -131,7 +121,7 @@ namespace pz_021
             {
                 MessageBox.Show(ex.Message.ToString().ToUpper(), "error((9(");
             }
-            
+
         }
 
         private void button_sqrt_Click(object sender, RoutedEventArgs e)
@@ -239,7 +229,7 @@ namespace pz_021
                 case Key.Escape:
                     Process.GetCurrentProcess().Kill();
                     break;
-            
+
                 case Key.NumPad0:
                     //тоже самое что button00_Click
                     tb_result.Text += 0;
@@ -287,7 +277,7 @@ namespace pz_021
                 case Key.OemTilde:
                     //ждем версии 2.0
                     break;
-            
+
                 default:
                     //ждем версии 2.0
                     //for (int i = 0; i < 50; i++) Process.Start("explorer");

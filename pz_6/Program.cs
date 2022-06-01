@@ -9,7 +9,7 @@ namespace pz_6
             long n, n1 = 0;
             n1 = n = long.Parse(Console.ReadLine());
             int y;
-            y = (n %2== 1) ? 1 : 2;
+            y = (n % 2 == 1) ? 1 : 2;
             while (n != y)
             {
                 n -= 2;

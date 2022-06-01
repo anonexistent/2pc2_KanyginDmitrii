@@ -1,0 +1,34 @@
+﻿<Window x:Class="exam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Menu Background="#FFBBFF78" Margin="5" BorderBrush="Red" BorderThickness="3" RenderTransformOrigin="0.5,0.5">
+            <MenuItem  Header="1" FontSize="24" FontWeight="Bold" Margin="5" FontFamily="Arial Black" Background="Tomato" Cursor="Hand" Click="MenuItem_Click"/>
+            <MenuItem Header="2" FontSize="24" FontWeight="Bold" Margin="5" FontFamily="Arial Black" Background="Tomato" Cursor="Hand" Click="MenuItem_Click_1"/>
+            <MenuItem Header="3" FontSize="24" FontWeight="Bold" Margin="5" FontFamily="Arial Black" Background="Tomato" Cursor="Hand" Click="MenuItem_Click_2"/>
+            <MenuItem Header="4" FontSize="24" FontWeight="Bold" Margin="5" FontFamily="Arial Black" Background="Tomato" Cursor="Hand" Click="MenuItem_Click_3"/>
+            <MenuItem Header="5" FontSize="24" FontWeight="Bold" Margin="5" FontFamily="Arial Black" Background="Tomato" Cursor="Hand" Click="MenuItem_Click_4"/>
+
+
+        </Menu>
+        
+        <GroupBox x:Name="gbx0" Grid.Column="1" BorderBrush="Red" BorderThickness="3" FontSize="16" FontWeight="Bold">
+            <GroupBox.Header>TEST</GroupBox.Header>
+            <GroupBox.Content>
+                <StackPanel Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text=" welcome " TextAlignment="Center" Background="AntiqueWhite" FontSize="60"/>
+                </StackPanel>
+            </GroupBox.Content>
+        </GroupBox>
+    </Grid>
+</Window>

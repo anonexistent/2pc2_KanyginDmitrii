@@ -8,9 +8,9 @@ namespace pz_016
             таким номером нет, то оставить файл без изменений.  */
         static ulong Fak(ulong a)
         {
-            if (a==0) return 0;
+            if (a == 0) return 0;
             ulong result = 1;
-            for (ulong i = 1; i <=a; i++)
+            for (ulong i = 1; i <= a; i++)
             {
                 result *= i;
             }

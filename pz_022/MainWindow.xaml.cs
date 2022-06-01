@@ -1,19 +1,13 @@
-﻿using System;
-using System.IO;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Win32;
 
 namespace WpfA
 {
@@ -29,15 +23,15 @@ namespace WpfA
             rb0.ContextMenu.Background = Brushes.WhiteSmoke;
         }
 
-        List<int> list0 = new List<int>();        
+        List<int> list0 = new List<int>();
 
         private string _ffile;
-        public string ffile 
+        public string ffile
         {
             get { return _ffile = "a11c.txt"; }
         }
 
-        
+
         public void CreateFile(string filename)
         {
             string path0 = @"..\data\" + filename;
@@ -56,7 +50,7 @@ namespace WpfA
         public void OpenFile()
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "TextFile (*.txt)|*.txt|RichTextFile (*.rtf)|*.rtf";   
+            open.Filter = "TextFile (*.txt)|*.txt|RichTextFile (*.rtf)|*.rtf";
             open.ShowDialog();
 
 
@@ -82,11 +76,11 @@ namespace WpfA
                 FileInfo fi = new FileInfo(open.FileName);
 
                 lb0.Items.Add(our0);
-                sbright.Text=(fi.Length).ToString()+" b";
+                sbright.Text = (fi.Length).ToString() + " b";
             }
         }
 
-        public void RichBoxLoadRtf(RichTextBox a,string filename)
+        public void RichBoxLoadRtf(RichTextBox a, string filename)
         {
             var st = new MemoryStream(Encoding.Unicode.GetBytes(filename));
             FileStream ss = new FileStream(filename, FileMode.Open);
@@ -130,7 +124,7 @@ namespace WpfA
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "TextFile (*.txt)|*.txt";
             save.ShowDialog();
-            
+
             try
             {
                 string filename0 = save.FileName;
@@ -168,7 +162,7 @@ namespace WpfA
             //rb0.FontFamily;
 
             if (rb0.FontStyle != FontStyles.Italic) rb0.FontStyle = FontStyles.Italic;
-            else rb0.FontStyle = FontStyles.Normal;         
+            else rb0.FontStyle = FontStyles.Normal;
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
@@ -180,12 +174,12 @@ namespace WpfA
             }
             catch (Exception)
             {
-                MessageBox.Show("eror","eror",MessageBoxButton.YesNoCancel);
-            }            
+                MessageBox.Show("eror", "eror", MessageBoxButton.YesNoCancel);
+            }
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {            
+        {
             stackpanel0.IsEnabled = false;
             button007.Visibility = Visibility.Visible;
             lb0.IsEnabled = false;
@@ -199,7 +193,7 @@ namespace WpfA
             item.Content = ".txt";
             tempcombox0.Items.Add(item);
             item = (ComboBoxItem)tempcombox0.Items[0];
-            item.IsSelected= true;
+            item.IsSelected = true;
             //tempTextBox.Width = 100;
             //tempComboBox.Width = 50;
             //tempComboBox.Margin = new Thickness(100);
@@ -207,7 +201,7 @@ namespace WpfA
             //statusbar0.Items.Add(tempComboBox);
 
             //statusbar0.IsEnabled= true;
-            
+
             tempcombox0.Visibility = Visibility.Visible;
             temptextbox0.Visibility = Visibility.Visible;
             butbut.Click += But_click;
@@ -217,16 +211,21 @@ namespace WpfA
             string filelll = temptextbox0.Text;
             stackpanel0.IsEnabled = true;
             button007.Visibility = Visibility.Hidden;
-            lb0.IsEnabled = true ;
-            rb0.IsEnabled = true ;
-            popup1.IsOpen = false ;
+            lb0.IsEnabled = true;
+            rb0.IsEnabled = true;
+            popup1.IsOpen = false;
             tempcombox0.Visibility = Visibility.Hidden;
             temptextbox0.Visibility = Visibility.Hidden;
 
 
-            FileStream fs = new FileStream(@"..\data\" + filelll + @".txt", FileMode.CreateNew); 
-            fs.Close();           
-            
+            FileStream fs = new FileStream(@"..\data\" + filelll + @".txt", FileMode.CreateNew);
+            fs.Close();
+
+        }
+
+        private void MenuItem_Click_3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("gfdfg");
         }
 
         //  Паттерн "Команда" (Command)

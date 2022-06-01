@@ -7,49 +7,49 @@ namespace ConsoleApp__0_
     {
         static void Main(string[] args)
         {
-            
-                Console.WriteLine("pls enter file name pls: ");
 
-                FileStream file1 = new FileStream(new string(@"C:\fet\" + @$"{Console.ReadLine()})"), FileMode.Append);
+            Console.WriteLine("pls enter file name pls: ");
 
-                string dirrr = @"C:\fet\";
+            FileStream file1 = new FileStream(new string(@"C:\fet\" + @$"{Console.ReadLine()})"), FileMode.Append);
 
-                DirectoryInfo dirinfo = new DirectoryInfo(dirrr);
+            string dirrr = @"C:\fet\";
 
-                dirinfo.
+            DirectoryInfo dirinfo = new DirectoryInfo(dirrr);
 
-                FileStream file0 = new FileStream(@"C:\fet\no.txt", FileMode.Append);
+            dirinfo.
 
-                string[] str0 = Console.ReadLine().Split('.');
+            FileStream file0 = new FileStream(@"C:\fet\no.txt", FileMode.Append);
 
-                StreamWriter writer = new StreamWriter(file0);
+            string[] str0 = Console.ReadLine().Split('.');
 
-                //65-90 upper
-                //97-122 down
+            StreamWriter writer = new StreamWriter(file0);
 
-                //for (int i = 0; i < str0.Length-1; i++)
-                //{
-                // if (str0[i-1].EndsWith('.')) char.ToUpper(str0[i][0]);
-                //}
+            //65-90 upper
+            //97-122 down
 
-                //for (int i = 0; i < str0.Length; i++)
-                //{
-                // Console.WriteLine(str0[i]);
-                //}
+            //for (int i = 0; i < str0.Length-1; i++)
+            //{
+            // if (str0[i-1].EndsWith('.')) char.ToUpper(str0[i][0]);
+            //}
 
-                //for (int i = 0; i < str0.Length; i++)
-                //{
-                // char.ToUpper(str0[i][0]);
-                // Console.WriteLine(str0[i]);
-                //}
+            //for (int i = 0; i < str0.Length; i++)
+            //{
+            // Console.WriteLine(str0[i]);
+            //}
 
-                for (int i = 0; i < str0.Length; i++)
-                {
-                    writer.Write(str0[i]);
-                }
+            //for (int i = 0; i < str0.Length; i++)
+            //{
+            // char.ToUpper(str0[i][0]);
+            // Console.WriteLine(str0[i]);
+            //}
 
-                writer.WriteLine("\n\n");
-                writer.Close();
+            for (int i = 0; i < str0.Length; i++)
+            {
+                writer.Write(str0[i]);
+            }
+
+            writer.WriteLine("\n\n");
+            writer.Close();
         }
     }
 }

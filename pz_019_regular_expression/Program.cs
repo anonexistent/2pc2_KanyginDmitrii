@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.IO;
+using System.Text.RegularExpressions;
 
 /* README
     в данном уроке вы научимся работать с регулярными выражениями, паралельно закрепим знания по следущим темам:
@@ -84,7 +84,7 @@ namespace pz_019_regular_expression
             string text2 =
                 $"Контакты в Москве tel: {uuu.Next(111111, 999999).ToString("##-##-##")}; fax: {uuu.Next(111111, 999999).ToString("##-##-##")}\n" +
                 $"Контакты в Саратове tel {uuu.Next(111111, 999999).ToString("##-##-##")}; fax {uuu.Next(111111, 999999).ToString("##-##-##")}";
-            Console.WriteLine("old data:\n"+text2);
+            Console.WriteLine("old data:\n" + text2);
             Regex inq = new Regex(@"\d\d(-\d\d){2}");
             MatchCollection rrr = inq.Matches(text2);
             Console.WriteLine("new data:");
@@ -155,7 +155,7 @@ namespace pz_019_regular_expression
             {
                 text = text.PadLeft((width - text.Length) / 2 + text.Length, ' ');
             }
-            Print("\n\n\n\n\n\n\n\n\n\n\n\n"+text+ "\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            Print("\n\n\n\n\n\n\n\n\n\n\n\n" + text + "\n\n\n\n\n\n\n\n\n\n\n\n\n");
         }
 
         static void Main(string[] args0

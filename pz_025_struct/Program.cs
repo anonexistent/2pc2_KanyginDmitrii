@@ -14,7 +14,7 @@ namespace pz_025_struct
                 string y = Console.ReadLine();
                 float z = float.Parse(Console.ReadLine());
 
-                spisok[i] = new Price(x,y,z);
+                spisok[i] = new Price(x, y, z);
             }
 
             Console.WriteLine(new string('_', 8));

@@ -42,7 +42,7 @@ namespace pz_014
                 char res = ' ';
 
                 int charindex = 0;
-                
+
                 strs[0] = char.ToUpper(strs[0]);
 
                 //начало предложения с заглавной буквы (версия1.0)
@@ -58,7 +58,7 @@ namespace pz_014
 
                 StreamWriter writer = new StreamWriter(file1);
 
-                writer.Write(String.Join(null, strs)+"\n");
+                writer.Write(String.Join(null, strs) + "\n");
                 writer.Close();
             }
         }

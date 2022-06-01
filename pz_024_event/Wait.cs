@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace pz_024_event
+﻿namespace pz_024_event
 {
     internal class Wait
     {
@@ -25,11 +19,11 @@ namespace pz_024_event
             ME200(a);
         }
 
-        void Temp800(int a) 
-        { 
+        void Temp800(int a)
+        {
             ME800 += a == 800 ? (a) => { global::System.Console.WriteLine("warning!!!!\ta\twarning!!!!"); } : null;
             ME800(a);
         }
-        
+
     }
 }

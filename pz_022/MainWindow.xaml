@@ -41,6 +41,8 @@
                             <MenuItem Header="about program"/>
                             <MenuItem Header="about autors"/>
                         </MenuItem>
+                            <MenuItem Header="Aue" Click="MenuItem_Click_3">
+                        </MenuItem>
                     </Menu>
 
                     <WrapPanel Height="25" >

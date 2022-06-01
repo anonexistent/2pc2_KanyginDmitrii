@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.IO;
-using System.Windows.Media;
+﻿using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace WpfA
 {
@@ -22,11 +17,11 @@ namespace WpfA
         public OurListBoxItem(string file0)
         {
             //Setter Property = "BorderThickness" Value = "2" />
-  
+
             //  < Setter Property = "BorderBrush" Value = "Green" />
-     
+
             //     < Setter Property = "Margin" Value = "1" />
-        
+
             //        < Setter Property = "Cursor" Value = "Hand" />
             OurFile = file0;
             this.BorderThickness = new Thickness(2);
@@ -47,7 +42,7 @@ namespace WpfA
                 sr.Close();
                 ((MainWindow)System.Windows.Application.Current.MainWindow).rb0.AppendText(line);
                 FileInfo fi = new FileInfo(OurFile);
-                ((MainWindow)System.Windows.Application.Current.MainWindow).sbright.Text=fi.Length.ToString()+" b";
+                ((MainWindow)System.Windows.Application.Current.MainWindow).sbright.Text = fi.Length.ToString() + " b";
             }
         }
     }

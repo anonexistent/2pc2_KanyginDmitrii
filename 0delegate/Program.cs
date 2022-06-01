@@ -1,6 +1,4 @@
-﻿using System;
-
-delegate char Delegate1();
+﻿delegate char Delegate1();
 
 namespace _0delegate
 {
@@ -8,7 +6,7 @@ namespace _0delegate
     {
         static void Main(string[] args)
         {
-            
+
         }
     }
 }

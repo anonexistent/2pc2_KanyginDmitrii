@@ -35,15 +35,15 @@ namespace pz_018
         {
             if (a == b) return a;
             if (a < b) { Console.WriteLine(a); return Ex3(a + 1, b); }
-            if (a > b) { Console.WriteLine(b); return Ex3(a, b + 1);}
+            if (a > b) { Console.WriteLine(b); return Ex3(a, b + 1); }
             return 0;
         }
 
         static int Ex51Sum(int a)
         {
             if (a == 0) return 0;
-            if (a== 1) return 1;
-            return Ex51Sum(a - 1)+a;
+            if (a == 1) return 1;
+            return Ex51Sum(a - 1) + a;
         }
 
         static int Ex52Pow(int a, int b)
@@ -55,17 +55,17 @@ namespace pz_018
 
         static bool Ex53Palindrom(string a)
         {
-            if (a[0] == a[^1] & a.Length == 3 | a.Length==2) return true;
+            if (a[0] == a[^1] & a.Length == 3 | a.Length == 2) return true;
             if (a[0] == a[^1]) return Ex53Palindrom(a.Substring(1, a.Length - 2));
             else return false;
-            return Ex53Palindrom(a.Substring(1, a.Length -2));
+            return Ex53Palindrom(a.Substring(1, a.Length - 2));
         }
 
         public static void Main()
         {
             Exercises o = new Exercises();
 
-            Console.WriteLine(o.Ex1 +"\n"+ Ex1(3));
+            Console.WriteLine(o.Ex1 + "\n" + Ex1(3));
 
             Console.WriteLine(o.Ex2 + "\n" + Ex2(3));
 
@@ -74,9 +74,9 @@ namespace pz_018
             int w = int.Parse(Console.ReadLine());
             Console.WriteLine(Ex3(q, w));
 
-            Console.WriteLine(o.Ex4 +"\n" + Ex51Sum(6));
+            Console.WriteLine(o.Ex4 + "\n" + Ex51Sum(6));
 
-            Console.WriteLine(o.Ex5 + "\n" + Ex52Pow(2,6));
+            Console.WriteLine(o.Ex5 + "\n" + Ex52Pow(2, 6));
 
             Console.WriteLine(o.Ex6 + "\n" + Ex53Palindrom("шалаш"));
         }

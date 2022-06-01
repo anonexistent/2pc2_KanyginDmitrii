@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace _0point1
+﻿namespace _0point1
 {
     //???????      http://www.unicode.org/charts/PDF/UFFF0.pdf     ???????
     internal class Program
