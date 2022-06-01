@@ -29,7 +29,6 @@ namespace exam
                 writer.WriteLine(str);
             }
             return str.ToString();
-            //ok
         }        
     }
 }
